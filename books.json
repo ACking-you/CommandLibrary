@@ -1,0 +1,11 @@
+{
+    "data": [
+        {
+            "author": "afdsaf",
+            "book_count": 10,
+            "book_id": "test1",
+            "borrower_count": 0,
+            "name": "sdasfl"
+        }
+    ]
+}
