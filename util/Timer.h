@@ -4,29 +4,34 @@
 
 #ifndef BENCHMARK_TIMER_H
 #define BENCHMARK_TIMER_H
+
 #include <chrono>
 #include <iostream>
 
 //用于计时的函数
 class Timer {
 public:
-    Timer(){
+    Timer() {
         m_StartTimepoint = std::chrono::high_resolution_clock::now();
     }
-    ~Timer(){
+
+    ~Timer() {
         Stop();
     }
-    void Stop(){
+
+    void Stop() {
         auto endTimepoint = std::chrono::high_resolution_clock::now();
-        auto start = std::chrono::time_point_cast<std::chrono::microseconds>(m_StartTimepoint).time_since_epoch().count();
+        auto start = std::chrono::time_point_cast<std::chrono::microseconds>(
+                m_StartTimepoint).time_since_epoch().count();
         auto end = std::chrono::time_point_cast<std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
-        auto duration = end-start;  //以微秒为单位
+        auto duration = end - start;  //以微秒为单位
         double ms = duration * 0.001;//得到毫秒
-        printf("%lld us (%lf ms)\n",duration,ms);
+        printf("%lld us (%lf ms)\n", duration, ms);
         fflush(stdout);
     }
+
 private:
-    std::chrono::time_point<std::chrono::high_resolution_clock>m_StartTimepoint;
+    std::chrono::time_point<std::chrono::high_resolution_clock> m_StartTimepoint;
 };
 
 

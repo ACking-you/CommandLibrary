@@ -4,6 +4,7 @@
 
 #ifndef LIBRARY_ENCODING_H
 #define LIBRARY_ENCODING_H
+
 #include <string>
 
 namespace Encoding {

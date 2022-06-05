@@ -6,6 +6,13 @@
             "book_id": "test1",
             "borrower_count": 0,
             "name": "sdasfl"
+        },
+        {
+            "author": "dafalf",
+            "book_count": 10,
+            "book_id": "salfj",
+            "borrower_count": 0,
+            "name": "1dfads"
         }
     ]
 }

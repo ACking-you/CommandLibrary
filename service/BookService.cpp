@@ -5,14 +5,14 @@
 #include "BookService.h"
 
 void BookService::AddBook(const Book &book) {
-    if(BookDAO::getInstance().IsBookExist(book.book_id)){
+    if (BookDAO::getInstance().IsBookExist(book.book_id)) {
         throw std::runtime_error("Repeated book_id");
     }
     BookDAO::getInstance().AddBook(book);
 }
 
 void BookService::UpdateBook(const Book &book) {
-    if(!BookDAO::getInstance().IsBookExist(book.book_id)){
+    if (!BookDAO::getInstance().IsBookExist(book.book_id)) {
         throw std::runtime_error("Update failed, book does not exist");
     }
     BookDAO::getInstance().UpdateBook(book);

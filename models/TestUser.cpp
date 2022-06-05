@@ -3,6 +3,6 @@
 //
 #include "User.h"
 
-int main(){
+int main() {
 
 }

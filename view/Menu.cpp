@@ -8,8 +8,8 @@
 
 std::string Menu::GetLine() {
     std::string cmd;
-    std::cout<<"library> ";
-    std::getline(std::cin,cmd );
+    std::cout << "library> ";
+    std::getline(std::cin, cmd);
     fflush(stdout);
     fflush(stdin);
     CMD::Trim(cmd);
@@ -35,25 +35,24 @@ void Menu::Run() {
 
 )");
     std::string cmd;
-    do{
+    do {
         cmd = GetLine();
-        if(cmd.empty()){
+        if (cmd.empty()) {
             continue;
         }
-        if(cmd=="help")
-        {
+        if (cmd == "help") {
             Help();
             continue;
         }
         CMD::GetInstance().ParseCmd(cmd);
-        std::cout<<std::endl;
-    }while(cmd!="quit"&&cmd!="exit");
+        std::cout << std::endl;
+    } while (cmd != "quit" && cmd != "exit");
 }
 
 std::string Menu::GetBookInfo(const char *info) {
     std::string cmd;
-    printf("%6s-> ",info);
-    std::getline(std::cin,cmd );
+    printf("%6s-> ", info);
+    std::getline(std::cin, cmd);
     fflush(stdout);
     fflush(stdin);
     CMD::Trim(cmd);
